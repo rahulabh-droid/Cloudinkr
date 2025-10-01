@@ -1,0 +1,171 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  animation: fadeIn 1s ease-in;
+}
+
+.container {
+  text-align: center;
+  padding: 2rem 3rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  animation: popIn 0.7s ease-in-out;
+}
+
+.top h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.brand {
+  color: #ffde59;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}
+
+.nav-links {
+  font-size: 1.2rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1rem;
+  padding: 8px 16px;
+  border: 2px solid white;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: #fff;
+  color: #2575fc;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+/* Auth container */
+.auth-container {
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2.5rem 2rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 1s ease-in;
+}
+
+/* Heading */
+.auth-container h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+/* Brand color */
+.brand {
+  color: #ffde59;
+  font-weight: bold;
+}
+
+/* Form styles */
+.auth-form input {
+  width: 100%;
+  padding: 12px 16px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.auth-form input::placeholder {
+  color: #ddd;
+}
+
+.auth-form input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+}
+
+/* Button */
+.auth-form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 1rem;
+  background: #ffde59;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.auth-form button:hover {
+  background: #ffe970;
+}
+
+/* Switch to signup */
+.switch {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.switch a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

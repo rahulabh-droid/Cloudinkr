@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <img src="/images/cloudinkr2.png" width="60px" height="60px"> 
+  <% if (user) { %>
+    <a href="/api/google/connect" class="btn btn-primary ms-3">Connect Google Drive</a>
+  <% } else { %>
+    <a href="/signin" class="btn btn-secondary ms-3">Sign In</a>
+  <% } %>
+    <div class="collapse navbar-collapse" id="navbarNavApp">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="/files">My Files</a></li>
+        <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

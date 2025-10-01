@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Duplicate Files</title>
+  <style>
+    img { width: 200px; height: auto; margin: 10px; border: 2px solid #ccc; }
+    .file-box { display: inline-block; text-align: center; margin: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Duplicate Files</h1>
+
+  <% if (message) { %>
+    <p><%= message %></p>
+  <% } else { %>
+    <% duplicates.forEach(file => { %>
+      <div class="file-box">
+        <img src="<%= file.url %>" alt="<%= file.filename %>">
+        <p><%= file.filename %></p>
+        <form action="/delete/<%= file.id %>" method="POST">
+          <button type="submit">Delete</button>
+        </form>
+      </div>
+    <% }) %>
+  <% } %>
+
+  <br>
+  <a href="/App">⬅ Back to App</a>
+</body>
+</html>
