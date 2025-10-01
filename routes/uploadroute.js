@@ -11,7 +11,8 @@ const db= new pg.Client({
     port: process.env.Db_port,
     database: process.env.Db_database,
     password: process.env.Db_password,
-})
+    ssl: { rejectUnauthorized: false },
+});
 
 db.connect();
 
@@ -19,10 +20,8 @@ router.post('/upload', upload.single('file'), async (req, res) => {
   try {
     console.log("File upload object:", req.file);
     const originalname = req.file.originalname;
-    const url = req.file.path;          // Cloudinary secure_url
-    const public_id = req.file.filename; // exact public_id returned by Cloudinary
-
-    // save to DB
+    const url = req.file.path;          
+    const public_id = req.file.filename; 
     await db.query(
       'INSERT INTO files (filename, public_id, url) VALUES ($1, $2, $3)',
       [originalname, public_id, url]

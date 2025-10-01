@@ -10,7 +10,6 @@ import deleteFiles from './routes/Deletefiles.js';
 import googleDriveRoutes from './routes/googledrive.js';
 import cookieParser from "cookie-parser";
 import { generateToken } from "./utils/jwt.js";
-import axios from "axios";
 import https from "https";
 
 dotenv.config();
@@ -22,7 +21,8 @@ const db = new pg.Client({
   port: process.env.Db_port,
   database: process.env.Db_database,
   password: process.env.Db_password,
-})
+  ssl: { rejectUnauthorized: false },
+});
 
 db.connect();
 app.use(async (req, res, next) => {

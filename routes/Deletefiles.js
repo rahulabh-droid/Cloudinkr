@@ -9,7 +9,8 @@ const db = new pg.Client({
   port: process.env.Db_port,
   database: process.env.Db_database,
   password: process.env.Db_password,
-})
+  ssl: { rejectUnauthorized: false },
+});
 
 db.connect();
 const router = express.Router();
@@ -29,7 +30,7 @@ router.post('/delete-files', async (req, res) => {
       )
     );
 
-    // Remove from DB after successful deletion
+  
     await Promise.all(
       files.map(({ public_id }) =>
         db.query('DELETE FROM files WHERE public_id=$1', [public_id])
